@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Form Data Akseptor KB</title>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #5c5ac7;
+    margin: 0;
+    padding-bottom: 40px;
+  }
+
+  .header {
+    max-width: 680px;
+    margin: 30px auto 10px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.15);
+  }
+
+  .header-bar {
+    height: 10px;
+    background: #7299e0;
+  }
+
+  .header-content {
+    padding: 20px;
+  }
+
+  .header-content h2 {
+    margin: 0;
+  }
+
+  .required {
+    color: #5c5ac7;
+    font-size: 13px;
+  }
+
+  .card {
+    max-width: 640px;
+    background: #fff;
+    margin: 15px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.15);
+  }
+
+  label {
+    font-weight: bold;
+  }
+
+  .star {
+    color: #143c85;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  input[type="date"] {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    padding: 8px 2px;
+    margin-top: 10px;
+    font-size: 14px;
+    outline: none;
+  }
+
+  input:focus {
+    border-bottom-color: #143c85;
+  }
+
+  .options {
+    margin-top: 10px;
+  }
+
+  .options label {
+    display: block;
+    font-weight: normal;
+    margin-top: 8px;
+  }
+
+  .buttons {
+    max-width: 640px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  button {
+    background: #143c85;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  .clear {
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+  }
+</style>
+</head>
+
+<body>
+
+<form>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-bar"></div>
+    <div class="header-content">
+      <h2>LAPORAN REKAP HASIL PELAYANAN  KB TAHUN 2026</h2>
+      <p>Pendataan pelayanan KB</p>
+      <div class="required">* Wajib diisi</div>
+    </div>
+  </div>
+
+  <!-- NAMA ISTRI -->
+  <div class="card">
+    <label>Nama Istri <span class="star">*</span></label>
+    <input type="text" required>
+  </div>
+
+  <!-- NAMA SUAMI -->
+  <div class="card">
+    <label>Nama Suami</label>
+    <input type="text">
+  </div>
+
+  <!-- NIK -->
+  <div class="card">
+    <label>NIK <span class="star">*</span></label>
+    <input type="text" required>
+  </div>
+
+  <!-- TANGGAL LAHIR -->
+  <div class="card">
+    <label>Tanggal Lahir</label>
+    <input type="date">
+  </div>
+
+  <!-- ALAMAT -->
+  <div class="card">
+    <label>Alamat</label>
+    <input type="text">
+  </div>
+
+  <!-- JUMLAH ANAK -->
+  <div class="card">
+    <label>Jumlah Anak</label>
+    <input type="number" min="0">
+  </div>
+
+  <!-- AKSEPTOR -->
+  <div class="card">
+    <label>Jenis Akseptor <span class="star">*</span></label>
+    <div class="options">
+      <label><input type="radio" name="akseptor" required> Pasca Salin</label>
+      <label><input type="radio" name="akseptor"> Baru</label>
+      <label><input type="radio" name="akseptor"> Ganti Cara</label>
+      <label><input type="radio" name="akseptor"> Ulangan</label>
+    </div>
+  </div>
+
+  <!-- KB SEBELUMNYA -->
+  <div class="card">
+    <label>KB Sebelumnya</label>
+    <input type="text" placeholder="Pil / Suntik / -">
+  </div>
+
+  <!-- PILIHAN ALAT KB -->
+  <div class="card">
+    <label>Pilihan Alat Kontrasepsi <span class="star">*</span></label>
+    <div class="options">
+      <label><input type="radio" name="kb" required> IUD</label>
+      <label><input type="radio" name="kb"> Implant</label>
+    </div>
+  </div>
+
+  <!-- KETERANGAN -->
+  <div class="card">
+    <label>Keterangan</label>
+    <input type="text">
+  </div>
+
+  <!-- SUBMIT -->
+  <div class="buttons">
+    <button type="submit">Kirim</button>
+    <div class="clear" onclick="this.closest('form').reset()">Bersihkan</div>
+  </div>
+
+</form>
+
+</body>
+</html>
